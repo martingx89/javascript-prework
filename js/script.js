@@ -1,3 +1,6 @@
+let playerWins = 0;
+let computerWins = 0;
+
 let buttonRock = document.getElementById("button-rock");
 buttonRock.addEventListener("click", function () {
 	buttonClicked("kamień");
@@ -41,14 +44,19 @@ function displayResult(argPlayerMove, argComputerMove) {
 	console.log("wywołano funkcję displayResults z argumentami: " + argPlayerMove + ", " + argComputerMove);
 	if (argPlayerMove == "papier" && argComputerMove == "kamień") {
 		printMessage("Wygrywasz!");
+		playerWins += 1;
 	} else if (argPlayerMove == "kamień" && argComputerMove == "nożyce") {
 		printMessage("Wygrywasz!");
+		playerWins += 1;
 	} else if (argPlayerMove == "nożyce" && argComputerMove == "papier") {
 		printMessage("Wygrywasz!");
+		playerWins += 1;
 	} else if (argPlayerMove == argComputerMove) {
 		printMessage("Remis");
 	} else {
 		printMessage("Przegrywasz :(");
+		computerWins += 1;
 	}
 	printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
+	printMessage("Komputer: " + computerWins + ", Gracz: " + playerWins);
 }
