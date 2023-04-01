@@ -1,7 +1,62 @@
+/*Variables*/
+
+$color-one: rgb(238, 209, 74);
+$color-two: rgb(251, 251, 251);
+$color-three: #737373;
+
 /*Global*/
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	display: flex;
+	max-width: 500px;
+	padding: 0;
+	margin: 50px auto;
+	flex-direction: column;
+}
+
+/*Game ctrls*/
+
+.game-controls {
+	margin: 0 auto;
+	.btn {
+		padding: 0;
+		height: max-content;
+		width: fit-content;
+		font-size: 24px;
+		border: none;
+		border-radius: 50%;
+		background-color: $color-three;
+
+		i {
+			font-size: 35px;
+			text-align: center;
+			height: 70px;
+			width: 70px;
+			line-height: 70px;
+			color: $color-two;
+
+			&:hover {
+				color: $color-one;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+/*Notifications*/
+
+.info {
+	margin-top: 100px;
+	text-align: center;
 }
